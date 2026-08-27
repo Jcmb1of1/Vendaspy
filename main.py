@@ -19,7 +19,8 @@ try:
 except:
     print('Houve um erro ao ler o arquivo!')
 else:
-    d.faturar(df)
+    novo_df = d.faturar(df)
+    d.graficar(df, novo_df)
 
 
 
