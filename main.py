@@ -13,15 +13,12 @@ while True:
         break
     else:
         print('Nenhum arquivo excel ou csv encontrado!')
-
+d.limpa_tela()
 try:
     df = leitor(tabela)
-except:
-    print('Houve um erro ao ler o arquivo!')
+except FileNotFoundError:
+    print('Houve um erro ao ler o arquivo!\nArquivo não encontrado...')
 else:
-    novo_df = d.faturar(df)
-    d.graficar(df, novo_df)
-
-
-
-
+    nova_tabela = d.faturar(df)
+    if nova_tabela is not None:
+        d.graficar(df, nova_tabela)
