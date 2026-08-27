@@ -16,7 +16,6 @@ def faturar(df):
     else:
         return tab
 
-
 def graficar(df, novodf):
 
     totfat = (df['preco'] * df['quantidade_vendida']).sum()
@@ -24,9 +23,8 @@ def graficar(df, novodf):
     nomes = [*[nomes for nomes in novodf['Produto']], 'Outros']
     plt.figure(figsize = [10, 10])
     plt.pie(valores, labels=nomes, autopct='%1.1f%%', wedgeprops={'width': 0.3}, textprops={'fontsize': 7})
-    plt.legend([f'Soma dos valores: {novodf["Faturamento"].sum()/totfat*100:.2f} do total.'], loc='upper left')
+    plt.legend([f'Soma dos valores: {novodf["Faturamento"].sum()/totfat*100:.2f}% do total.'], loc='upper left')
     plt.show()
-
 
 def limpa_tela():
     os.system('cls')

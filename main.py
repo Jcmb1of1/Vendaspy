@@ -3,6 +3,7 @@ import pandas as pd
 import defs as d
 
 while True:
+    d.limpa_tela()
     tabela = (input('Coloque aqui o nome da sua tabela:\n'))
     ext = Path(tabela).suffix
     if ext == '.csv':
